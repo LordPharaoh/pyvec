@@ -77,12 +77,12 @@ class Vector(list):
         return self.cross(other)
 
     def cross(self, other):
-		if len(self) != 3 or len(other) != 3:
-			raise ValueError("Cannot find the cross product of vectors with more or less than 3 dimensions.")	
-		else:
-			return Vector(self[1] * other[2] - self[1] * other[1], 
-						  self[0] * other[2] - self[2] * other[0], 
-						  self[0] * other[1] - self[1] * other[0])
+        if len(self) != 3 or len(other) != 3:
+            raise ValueError("Cannot find the cross product of vectors with more or less than 3 dimensions.")   
+        else:
+            return Vector(self[1] * other[2] - self[1] * other[1], 
+                          self[0] * other[2] - self[2] * other[0], 
+                          self[0] * other[1] - self[1] * other[0])
 
     def __abs__(self):
         return self.distance(Vector(*[0 for i in self]))
